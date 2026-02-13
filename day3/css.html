@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yugeshwaran Portfolio</title>
+
+<style>
+
+/* ================= GOOGLE FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap');
+
+/* ========== ELEMENT SELECTOR ========== */
+body{
+    font-family:'Poppins',sans-serif;
+    margin:0;
+    background: linear-gradient(to right,#d9a7c7,#fffcdc);
+    line-height:1.6;
+    letter-spacing:1px;
+}
+
+/* ========== STICKY NAVBAR + FLEXBOX ========== */
+nav{
+    background:#222;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:15px;
+    margin:0;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    padding:5px 10px;
+}
+
+/* pseudo classes */
+nav a:hover{color:yellow;}
+nav a:active{color:red;}
+nav a:focus{outline:3px dashed yellow;}
+
+/* ========== HERO SECTION ========== */
+header{
+    background:#4b0082;
+    color:white;
+    text-align:center;
+    padding:40px;
+    position:relative;
+}
+
+header::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:5px;
+    background:yellow;
+    bottom:0;
+    left:0;
+}
+
+/* pseudo element */
+h1::first-letter{
+    font-size:50px;
+    color:yellow;
+}
+
+/* ========== SECTION STYLE ========== */
+section{
+    background:white;
+    margin:20px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+/* typography */
+h2{
+    font-family:'Playfair Display',serif;
+    color:#4b0082;
+    border-bottom:2px solid #4b0082;
+    padding-bottom:5px;
+    text-transform:uppercase;
+    text-shadow:1px 1px 2px gray;
+}
+
+/* ========== PROJECT CARDS FLEXBOX ========== */
+.projects{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:230px;
+    background:#f0f8ff;
+    padding:15px;
+    border-radius:10px;
+    border:2px solid blue; /* specificity low */
+    transition:.3s;
+}
+
+/* higher specificity wins */
+#projects .card{
+    border:2px solid green;
+}
+
+/* !important demo */
+.card.special{
+    border:4px solid red !important;
+}
+
+/* hover lift */
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* nth child */
+.card:nth-child(2){
+    background:#fff0f5;
+}
+
+/* ========== BOX MODEL ========== */
+.card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+/* ========== OVERFLOW DEMO ========== */
+.overflow-container{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.box{
+    width:150px;
+    height:80px;
+    border:2px solid black;
+    padding:5px;
+}
+
+.visible{overflow:visible;}
+.hidden{overflow:hidden;}
+.scroll{overflow:scroll;}
+.auto{overflow:auto;}
+
+/* ========== DISPLAY TYPES ========== */
+.inline span{
+    display:inline;
+    background:yellow;
+}
+
+.block div{
+    display:block;
+    background:lightblue;
+    margin:5px;
+}
+
+.inlineblock div{
+    display:inline-block;
+    background:pink;
+    padding:10px;
+}
+
+/* ========== POSITIONING ========== */
+.static-demo{position:static;background:lightgreen;padding:10px;margin:10px;}
+.relative-demo{position:relative;left:20px;background:orange;padding:10px;margin:10px;}
+
+/* fixed button */
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:black;
+    color:white;
+    padding:12px;
+    border-radius:50%;
+    text-decoration:none;
+}
+
+/* ========== FORM ========== */
+form{
+    background:#f0f8ff;
+    padding:20px;
+    border-radius:10px;
+    width:60%;
+    margin:auto;
+}
+
+input,select{
+    padding:8px;
+    margin:8px 0;
+    width:90%;
+}
+
+input[type="submit"]{
+    background:#4b0082;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+input[type="submit"]:hover{
+    background:green;
+}
+
+/* ========== FOOTER ========== */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* ========== MEDIA QUERY ========== */
+@media(max-width:768px){
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .projects{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    form{width:90%;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Yugeshwaran</h1>
+    <p>Welcome to my portfolio website</p>
+</header>
+
+<nav>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section id="about">
+<h2>About Me</h2>
+<p>I am a Computer Science student passionate about development and cybersecurity.</p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects">
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Portfolio</h3>
+<p>Personal website project</p>
+</div>
+
+<div class="card special">
+<img src="https://via.placeholder.com/300">
+<h3>Weather App</h3>
+<p>API based weather app</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>IoT Project</h3>
+<p>Energy monitoring system</p>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Todo App</h3>
+<p>Task manager</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2>Overflow Demo</h2>
+<div class="overflow-container">
+<div class="box visible">visible overflow text example content here</div>
+<div class="box hidden">hidden overflow text example content here</div>
+<div class="box scroll">scroll overflow text example content here</div>
+<div class="box auto">auto overflow text example content here</div>
+</div>
+
+<h2>Display Types</h2>
+<div class="inline"><span>Inline1</span><span>Inline2</span></div>
+<div class="block"><div>Block1</div><div>Block2</div></div>
+<div class="inlineblock"><div>InlineBlock1</div><div>InlineBlock2</div></div>
+
+<div class="static-demo">Static position</div>
+<div class="relative-demo">Relative position</div>
+
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<form>
+<label>Name</label>
+<input type="text">
+
+<label>Email</label>
+<input type="email">
+
+<input type="submit" value="Send">
+</form>
+</section>
+
+<footer>
+<p>© 2026 Yugeshwaran Portfolio</p>
+</footer>
+
+<a href="#" id="topBtn">↑</a>
+
+</body>
+</html>
