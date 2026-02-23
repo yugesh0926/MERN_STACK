@@ -1,0 +1,14 @@
+.container {
+  background-color: #f2f2f2;
+  padding: 40px;
+  text-align: center;
+}
+
+.title {
+  color: darkblue;
+}
+
+.skills {
+  margin-top: 10px;
+  font-weight: bold;
+}
